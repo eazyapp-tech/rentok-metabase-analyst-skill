@@ -1,0 +1,4 @@
+interface:
+  display_name: "RentOk Metabase Analyst"
+  short_description: "Read-only RentOk analytics analyst for Metabase NLP questions"
+  default_prompt: "Use RentOk Metabase Analyst to answer this business question from read-only Metabase data:"
