@@ -74,7 +74,7 @@ Known useful assets include:
 
 Known stale signal:
 
-- `01 - Health Pulse` mentions `30,447` properties, while live verified count on June 26, 2026 is `70,396`.
+- `01 - Health Pulse` mentions `30,447` properties, while live verified active non-deleted property count on June 26, 2026 is `68,808`.
 
 ## Canonical Detail Docs
 

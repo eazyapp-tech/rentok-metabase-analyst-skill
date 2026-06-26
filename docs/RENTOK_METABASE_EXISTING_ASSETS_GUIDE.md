@@ -52,9 +52,9 @@ One current dashboard already shows why this matters:
 - dashboard `01 — Health Pulse`
 - description says baseline: `30,447 properties`
 
-But the current live property count verified on June 26, 2026 is:
+But the current live active non-deleted property count verified on June 26, 2026 is:
 
-- total properties: `70,396`
+- total properties: `68,808`
 
 So existing assets are useful context, but not automatically current truth.
 
@@ -228,7 +228,7 @@ Important caveats:
 
 For full detail, use:
 
-- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](./RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
+- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
 
 ## Money and collections dashboards
 
@@ -442,5 +442,5 @@ That is exactly the kind of thing that makes the eventual experience feel smart 
 
 ## Related rollout assets
 
-- [RENTOK_METABASE_PROMPT_PACK.md](./RENTOK_METABASE_PROMPT_PACK.md)
-- [RENTOK_METABASE_PILOT_SCORECARD.md](./RENTOK_METABASE_PILOT_SCORECARD.md)
+- [RENTOK_METABASE_PROMPT_PACK.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PROMPT_PACK.md)
+- [RENTOK_METABASE_PILOT_SCORECARD.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PILOT_SCORECARD.md)

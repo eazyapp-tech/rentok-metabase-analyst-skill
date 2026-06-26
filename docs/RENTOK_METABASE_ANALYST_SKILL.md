@@ -16,13 +16,13 @@ This is for RentOk's real data. Accuracy matters more than speed.
 
 Grounding reference:
 
-- [RENTOK_METABASE_ROLLOUT_QUICKSTART.md](./RENTOK_METABASE_ROLLOUT_QUICKSTART.md)
-- [RENTOK_ANALYTICS_GLOSSARY.md](./RENTOK_ANALYTICS_GLOSSARY.md)
-- [RENTOK_ANALYTICS_FORMULA_MAP.md](./RENTOK_ANALYTICS_FORMULA_MAP.md)
-- [RENTOK_METABASE_GOLD_PACK.md](./RENTOK_METABASE_GOLD_PACK.md)
-- [RENTOK_METABASE_EXISTING_ASSETS_GUIDE.md](./RENTOK_METABASE_EXISTING_ASSETS_GUIDE.md)
-- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](./RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
-- [RENTOK_METABASE_LEARNING_LOOP.md](./RENTOK_METABASE_LEARNING_LOOP.md)
+- [RENTOK_METABASE_ROLLOUT_QUICKSTART.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_ROLLOUT_QUICKSTART.md)
+- [RENTOK_ANALYTICS_GLOSSARY.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_ANALYTICS_GLOSSARY.md)
+- [RENTOK_ANALYTICS_FORMULA_MAP.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_ANALYTICS_FORMULA_MAP.md)
+- [RENTOK_METABASE_GOLD_PACK.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_GOLD_PACK.md)
+- [RENTOK_METABASE_EXISTING_ASSETS_GUIDE.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_EXISTING_ASSETS_GUIDE.md)
+- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
+- [RENTOK_METABASE_LEARNING_LOOP.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_LEARNING_LOOP.md)
 
 ## What the analyst must do
 
@@ -280,7 +280,7 @@ Use the reviewed learning loop:
 
 Use the template:
 
-- [LEARNING_NOTE_TEMPLATE.md](./learnings/LEARNING_NOTE_TEMPLATE.md)
+- [LEARNING_NOTE_TEMPLATE.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/learnings/LEARNING_NOTE_TEMPLATE.md)
 
 ## Required answer format
 
@@ -342,13 +342,13 @@ Good approach:
 - count test rows
 - derive real rows as `total - test`
 
-Live result verified on June 26, 2026:
+Live result verified on June 26, 2026 for active non-deleted properties:
 
-- total properties: `70,396`
-- test properties: `1,500`
-- real properties: `68,896`
-- test share: `2.13%`
-- real share: `97.87%`
+- total properties: `68,808`
+- test properties: `1,493`
+- real properties: `67,315`
+- test share: `2.17%`
+- real share: `97.83%`
 
 Confidence: `high`
 

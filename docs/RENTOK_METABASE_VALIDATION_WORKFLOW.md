@@ -26,9 +26,9 @@ We are validating four things:
 
 Primary grounding reference:
 
-- [RENTOK_ANALYTICS_GLOSSARY.md](./RENTOK_ANALYTICS_GLOSSARY.md)
-- [RENTOK_ANALYTICS_FORMULA_MAP.md](./RENTOK_ANALYTICS_FORMULA_MAP.md)
-- [RENTOK_METABASE_LEARNING_LOOP.md](./RENTOK_METABASE_LEARNING_LOOP.md)
+- [RENTOK_ANALYTICS_GLOSSARY.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_ANALYTICS_GLOSSARY.md)
+- [RENTOK_ANALYTICS_FORMULA_MAP.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_ANALYTICS_FORMULA_MAP.md)
+- [RENTOK_METABASE_LEARNING_LOOP.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_LEARNING_LOOP.md)
 
 ## Release gates
 
@@ -155,8 +155,8 @@ Each question should have:
 
 Use the detailed pack here:
 
-- [RENTOK_METABASE_GOLD_PACK.md](./RENTOK_METABASE_GOLD_PACK.md)
-- [RENTOK_METABASE_PILOT_SCORECARD.md](./RENTOK_METABASE_PILOT_SCORECARD.md)
+- [RENTOK_METABASE_GOLD_PACK.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_GOLD_PACK.md)
+- [RENTOK_METABASE_PILOT_SCORECARD.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PILOT_SCORECARD.md)
 
 ## Phase 1 gold questions
 
@@ -167,12 +167,12 @@ Expected:
 - table: `property`
 - logic: explicit `is_test`
 - counting unit: property row
-- current verified answer on June 26, 2026:
-  - total `70,396`
-  - test `1,500`
-  - real `68,896`
-  - test `2.13%`
-  - real `97.87%`
+- current verified answer on June 26, 2026 for active non-deleted properties:
+  - total `68,808`
+  - test `1,493`
+  - real `67,315`
+  - test `2.17%`
+  - real `97.83%`
 
 ### Q2. How many active tenants do we have?
 
@@ -182,7 +182,7 @@ Expected:
 - logic: `status = 1`
 - counting unit: tenant row or distinct tenant id
 - current verified answer on June 26, 2026:
-  - active tenants `353,490`
+  - active tenants `353,498`
 - caution:
   - extra live statuses `15` and `100` exist in the dataset and are not part of the currently verified backend status map
 
@@ -194,7 +194,7 @@ Expected:
 - logic: `status = 2`
 - counting unit: tenant row or distinct tenant id
 - current verified answer on June 26, 2026:
-  - bookings `7,917`
+  - bookings `7,943`
 
 ### Q4. How many leads do we have?
 
@@ -204,7 +204,7 @@ Expected:
 - logic: `status = 3`
 - counting unit: tenant row or distinct tenant id
 - current verified answer on June 26, 2026:
-  - leads `183,027`
+  - leads `183,077`
 
 ### Q5. What % of users are test and what % are real?
 
@@ -273,6 +273,7 @@ Expected:
 - recommend checking the same property in the manager app
 - if it matches, proceed to all properties
 - if it does not match, capture a learning note and do not trust the global query yet
+- if the all-properties output shows absurd unpaid totals, inspect the top rows and call out data outliers before presenting the metric
 
 ## Test execution method
 

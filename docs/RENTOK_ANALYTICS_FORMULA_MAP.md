@@ -22,9 +22,9 @@ If the analyst answers those without a formula map, it can easily mix:
 
 Use this with:
 
-- [RENTOK_ANALYTICS_GLOSSARY.md](./RENTOK_ANALYTICS_GLOSSARY.md)
-- [RENTOK_METABASE_ANALYST_SKILL.md](./RENTOK_METABASE_ANALYST_SKILL.md)
-- [RENTOK_METABASE_VALIDATION_WORKFLOW.md](./RENTOK_METABASE_VALIDATION_WORKFLOW.md)
+- [RENTOK_ANALYTICS_GLOSSARY.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_ANALYTICS_GLOSSARY.md)
+- [RENTOK_METABASE_ANALYST_SKILL.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_ANALYST_SKILL.md)
+- [RENTOK_METABASE_VALIDATION_WORKFLOW.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_VALIDATION_WORKFLOW.md)
 
 ## Confidence levels
 
@@ -52,8 +52,8 @@ Total dues is an aggregate of unpaid invoices.
 
 **Verified source**
 
-- `dues.md` (`/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money/dues.md:18`)
-- backend dues helper filter logic: `helpers.ts` (`/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:126`)
+- [dues.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money/dues.md:18)
+- backend dues helper filter logic: [helpers.ts](/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:126)
 
 **Current safe formula**
 
@@ -143,6 +143,15 @@ For non-technical verification:
 
 If the one-property result does not match the app, do not trust the global query yet.
 
+Before trusting a global dues-over-threshold answer:
+
+1. sort the grouped result by highest unpaid amount
+2. inspect the top rows for impossible values
+3. if absurd outliers appear, say that clearly
+4. validate one realistic property before presenting the broad answer
+
+This matters because a correct query shape can still surface bad legacy or anomalous invoice values.
+
 **Confidence**
 
 - `high` for the formula
@@ -160,7 +169,7 @@ Overdue dues are unpaid active invoices whose due date is before tomorrow.
 
 **Verified source**
 
-- backend dues filter code: `helpers.ts` (`/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:126`)
+- backend dues filter code: [helpers.ts](/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:126)
 
 **Current safe formula**
 
@@ -182,7 +191,7 @@ These are unpaid active invoices whose due date falls inside the current month, 
 
 **Verified source**
 
-- backend dues filter code: `helpers.ts` (`/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:130`)
+- backend dues filter code: [helpers.ts](/Users/eazypg/rentok-backend/src/v1/list_screens/dues/helpers.ts:130)
 
 **Current verified due-type buckets**
 
@@ -220,8 +229,8 @@ The app’s collections list is payment-centric, but some totals switch to invoi
 
 **Verified source**
 
-- `collections.md` (`/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money/collections.md:10`)
-- backend collection helper query: `helpers.ts` (`/Users/eazypg/rentok-backend/src/v1/list_screens/collections/helpers.ts:930`)
+- [collections.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money/collections.md:10)
+- backend collection helper query: [helpers.ts](/Users/eazypg/rentok-backend/src/v1/list_screens/collections/helpers.ts:930)
 
 **Current safe core rules**
 
@@ -290,7 +299,7 @@ They are not the same.
 
 **Verified source**
 
-- `collections.md` (`/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money-collections.md:242`)
+- [collections.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/money-collections.md:242)
 - [caution_money.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/caution_money.md:39)
 
 **Current verified rules**
@@ -322,7 +331,7 @@ The existing dashboard contract defines occupancy as bed-based, not room-count-b
 
 **Verified source**
 
-- dashboard field map: `dashboard.md` (`/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/people/dashboard.md:145`)
+- dashboard field map: [dashboard.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/memory-web/modules/people/dashboard.md:145)
 
 **Current safe formulas**
 
@@ -356,7 +365,7 @@ These come from `tenant.status`, not from separate tables.
 
 **Verified source**
 
-- `tenant.ts` (`/Users/eazypg/rentok-backend/src/entities/tenant.ts:154`)
+- [tenant.ts](/Users/eazypg/rentok-backend/src/entities/tenant.ts:154)
 
 **Current safe formulas**
 
@@ -439,7 +448,7 @@ The public/user dashboards add useful formula hints for customer-facing analysis
 
 Detailed reference:
 
-- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](./RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
+- [RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md)
 
 ## Next proof layer
 

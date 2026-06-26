@@ -54,11 +54,11 @@ An answer passes only if it does all of these:
 
 **Current verified answer on June 26, 2026**
 
-- total properties: `70,396`
-- test properties: `1,500`
-- real properties: `68,896`
-- test share: `2.13%`
-- real share: `97.87%`
+- total properties: `68,808`
+- test properties: `1,493`
+- real properties: `67,315`
+- test share: `2.17%`
+- real share: `97.83%`
 
 **Must say**
 
@@ -86,7 +86,7 @@ An answer passes only if it does all of these:
 
 **Current verified answer on June 26, 2026**
 
-- active tenants: `353,490`
+- active tenants: `353,498`
 
 **Must say**
 
@@ -119,7 +119,7 @@ An answer passes only if it does all of these:
 
 **Current verified answer on June 26, 2026**
 
-- bookings: `7,917`
+- bookings: `7,943`
 
 **Must say**
 
@@ -146,7 +146,7 @@ An answer passes only if it does all of these:
 
 **Current verified answer on June 26, 2026**
 
-- leads: `183,027`
+- leads: `183,077`
 
 **Must say**
 
@@ -328,11 +328,13 @@ An answer passes only if it does all of these:
 - use unpaid active invoice totals
 - suggest running one property first and checking the manager app
 - only treat the global version as trusted after the single-property check matches
+- inspect the highest unpaid rows before trusting the global result, because anomalous invoice values can exist
 
 **Must say**
 
 - one matching property proves the query shape is likely right, not that every edge case is covered
 - if the app does not match, capture a learning note and do not trust the global query yet
+- if the top grouped rows show impossible unpaid amounts, call out the outliers and avoid presenting that total without caveat
 
 **Fail examples**
 

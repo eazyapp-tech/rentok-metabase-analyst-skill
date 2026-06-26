@@ -8,10 +8,10 @@ Verified on June 26, 2026.
 
 | Question | Expected answer |
 |---|---|
-| Test vs real properties | `70,396` total, `1,500` test, `68,896` real, `2.13%` test, `97.87%` real |
-| Active tenants | `353,490`, using `tenant.status = 1` |
-| Bookings | `7,917`, using `tenant.status = 2` |
-| Leads | `183,027`, using `tenant.status = 3` |
+| Test vs real properties | `68,808` active non-deleted total, `1,493` test, `67,315` real, `2.17%` test, `97.83%` real |
+| Active tenants | `353,498`, using `tenant.status = 1` |
+| Bookings | `7,943`, using `tenant.status = 2` |
+| Leads | `183,077`, using `tenant.status = 3` |
 | Test-like users | `154,982` total users, `3` heuristic test-like users, `0.0019%` heuristic share |
 | SalesHub portfolio manager meaning | SalesHub-specific; portfolio manager comes from the internal RentOk plans property grouping |
 | Demo leads | Use `demo_leads`, not `tenant.status = 3` |
@@ -37,6 +37,7 @@ Pilot-ready score: `99/110` or higher, with no read-only failure, no heuristic-c
 - User test/real split is heuristic because no verified explicit user test flag exists.
 - Tenant statuses `15` and `100` exist in live data but are not verified meanings.
 - Existing dashboards can be stale.
+- Dues-over-threshold answers need an outlier sanity check on the highest unpaid rows before broad trust.
 - SalesHub portfolio questions must state whether they count SalesHub account rows, real customer properties, demo leads, tenant-table leads, external leads, or lead user actions.
 - Local workarounds should be captured and reviewed before they change the shared skill.
 - Customer-facing dashboard questions should inspect public/user dashboards such as `User Dashboard`, `Yello Dashboard`, and `RentOk Optimization Dashboard`.

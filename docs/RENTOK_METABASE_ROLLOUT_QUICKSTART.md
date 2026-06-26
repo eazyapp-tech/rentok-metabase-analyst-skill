@@ -76,7 +76,7 @@ METABASE_READ_ONLY_MODE = "true"
 
 Use the same MCP package and the prompt from:
 
-- [RENTOK_METABASE_PROMPT_PACK.md](./RENTOK_METABASE_PROMPT_PACK.md)
+- [RENTOK_METABASE_PROMPT_PACK.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PROMPT_PACK.md)
 
 If Claude Code supports local skills in that teammate's setup, install the same skill body and references.
 
@@ -105,13 +105,13 @@ Ask:
 What % of properties are test and what % are real?
 ```
 
-Expected current verified answer from June 26, 2026:
+Expected current verified answer from June 26, 2026 for active non-deleted properties:
 
-- total properties: `70,396`
-- test properties: `1,500`
-- real properties: `68,896`
-- test share: `2.13%`
-- real share: `97.87%`
+- total properties: `68,808`
+- test properties: `1,493`
+- real properties: `67,315`
+- test share: `2.17%`
+- real share: `97.83%`
 
 Must say:
 
@@ -140,6 +140,7 @@ Recommended workflow:
 5. Check whether the app's dues screen shows the same tenants or count.
 6. If it matches, run the same query for all properties.
 7. If it does not match, capture a learning note and do not trust the global query yet.
+8. If the all-properties result shows absurd unpaid amounts, inspect the top rows and call out likely data outliers before presenting the final answer.
 
 What this proves:
 
@@ -178,7 +179,7 @@ Run these in every client before broad team use:
 
 Score with:
 
-- [RENTOK_METABASE_PILOT_SCORECARD.md](./RENTOK_METABASE_PILOT_SCORECARD.md)
+- [RENTOK_METABASE_PILOT_SCORECARD.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/RENTOK_METABASE_PILOT_SCORECARD.md)
 
 ## Team add-ons
 
@@ -207,7 +208,7 @@ docs/ai/learnings/inbox/
 
 Use:
 
-- [LEARNING_NOTE_TEMPLATE.md](./learnings/LEARNING_NOTE_TEMPLATE.md)
+- [LEARNING_NOTE_TEMPLATE.md](/Users/eazypg/RentOk_Manager_App/rentokmanagerflutter/docs/ai/learnings/LEARNING_NOTE_TEMPLATE.md)
 
 Then review and promote only if it is backed by evidence.
 
