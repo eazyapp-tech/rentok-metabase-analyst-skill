@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Rollout quickstart
+    url: https://github.com/5s10r2/rentok-metabase-analyst-skill/blob/main/docs/RENTOK_METABASE_ROLLOUT_QUICKSTART.md
+    about: Read the setup and pilot workflow before filing a learning note.

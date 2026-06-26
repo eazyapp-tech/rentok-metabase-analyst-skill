@@ -9,3 +9,4 @@
 - Added rollout quickstart, prompt pack, validation workflow, gold pack, and pilot scorecard.
 - Added shared learning loop with learning-note template and inbox/reviewed/rejected folders.
 - Added one-property manager app cross-check guidance for high-impact app-visible metrics.
+- Added repo maintenance guardrails: `CONTRIBUTING.md`, issue template, and GitHub Actions validation workflow.

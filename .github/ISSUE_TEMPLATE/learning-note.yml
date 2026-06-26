@@ -1,0 +1,77 @@
+name: Learning note
+description: Capture a repeatable issue, workaround, or improvement from real usage
+title: "[learning] "
+labels: ["learning-note"]
+body:
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: 2026-06-26
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Client
+      placeholder: Codex / Claude Code / Antigravity / OpenCode
+    validations:
+      required: true
+  - type: input
+    id: team
+    attributes:
+      label: Team
+      placeholder: Business / Marketing / Sales Ops / Product Ops / Product / Design
+    validations:
+      required: true
+  - type: textarea
+    id: user_question
+    attributes:
+      label: User question
+      description: Paste the exact natural-language ask
+    validations:
+      required: true
+  - type: textarea
+    id: what_failed
+    attributes:
+      label: What failed
+    validations:
+      required: true
+  - type: textarea
+    id: working_fix
+    attributes:
+      label: Working fix
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Dashboard name, card id, backend path, screenshot, or query result. Do not include secrets.
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: Confidence
+      options:
+        - high
+        - medium
+        - low
+    validations:
+      required: true
+  - type: dropdown
+    id: promotion_target
+    attributes:
+      label: Proposed promotion target
+      options:
+        - skill prompt
+        - grounding map
+        - formula map
+        - existing assets guide
+        - public user dashboard guide
+        - gold pack
+        - client setup guide
+        - do not promote
+    validations:
+      required: true
