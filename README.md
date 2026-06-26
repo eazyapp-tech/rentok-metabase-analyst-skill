@@ -44,6 +44,7 @@ Then use:
 - [Prompt Pack](./docs/RENTOK_METABASE_PROMPT_PACK.md)
 - [Gold Pack](./docs/RENTOK_METABASE_GOLD_PACK.md)
 - [Pilot Scorecard](./docs/RENTOK_METABASE_PILOT_SCORECARD.md)
+- [Hardening Notes](./docs/RENTOK_METABASE_HARDENING_NOTES.md)
 
 ## Recommended proof loop
 
@@ -55,6 +56,16 @@ For high-impact queries, especially dues questions:
 4. If it does not match, capture a learning note and do not trust the global result yet.
 
 This is the fastest non-technical trust-building workflow in the package.
+
+## Live hardening
+
+Use the live regression pack before wider rollout or after a teammate reports a bad answer:
+
+```bash
+node ./scripts/live_regression_pack.js
+```
+
+It checks drift-prone baselines, unknown tenant statuses, dues-threshold anomaly patterns, and a real property cross-check.
 
 ## Important note on private references
 

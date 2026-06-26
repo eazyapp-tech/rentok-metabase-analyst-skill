@@ -34,7 +34,8 @@ For every business question:
 5. Validate unclear business terms against backend code or the grounding references.
 6. Run the smallest read query that answers the question.
 7. Run a cross-check for important or decision-driving answers.
-8. Answer with exact numbers, source tables, fields, filters, caveats, and confidence.
+8. For drift-prone answers, include the live verification date.
+9. Answer with exact numbers, source tables, fields, filters, caveats, and confidence.
 
 ## Hard Rules
 
@@ -43,10 +44,14 @@ For every business question:
 - Never present heuristic matching as verified truth.
 - Always state the counting unit when joins are involved.
 - For "test vs real", look for explicit `is_test` first.
+- For property counts, state whether deleted properties are included.
 - If an existing saved Metabase asset conflicts with a live query, trust the live query and mention the stale asset.
 - For SalesHub or portfolio questions, classify whether the unit is a SalesHub account row, real customer property, demo lead, tenant-table lead, external lead, or lead user action before querying.
 - For public/user dashboard questions, inspect dashboards such as `User Dashboard`, `User Dashboard - Star`, `User Dashboard - Vilaasa`, `Yello Dashboard`, `Yello! Final Dashboard`, and `RentOk Optimization Dashboard` for query shape.
 - For high-impact app-visible metrics, suggest a one-property manager app cross-check before trusting a global answer.
+- For dues or collections, do not invent invoice logic from guessed columns. Use verified formula rules.
+- If tenant statuses `15` or `100` are relevant, do not present a confident lifecycle meaning unless newly proven.
+- If two plausible join paths disagree, say so and lower confidence.
 - Capture repeatable client issues, workarounds, and corrected metric logic as learning notes for reviewed promotion.
 
 ## First RentOk Anchors
@@ -86,14 +91,21 @@ Live data also contains statuses `15` and `100`; do not invent their meaning wit
 - Property join: `room.property_id = property.id`
 - Tenant-room bridge: `tenant_room`
 - Room/bed hierarchy matters for occupancy questions.
+- Old-structure occupancy often relies on `tenant.room`.
+- Newer property structures can use `tenant_room` or `tenant_stay_history` style logic.
 
 ### Invoices and Payments
 
 - Dues are invoice-side: unpaid, active invoice amounts.
+- Approved dues base: `invoices.status = 0` and `invoices.is_active = 1`.
+- Approved collection base: `invoices.status = 1` and `invoices.is_active = 1`, plus real-payment filters when collection logic requires them.
 - Collections are payment-side unless a due-type or invoice-level filter changes the lens.
 - Be explicit about paid date vs due date, invoice-side vs payment-side, and refund handling.
 - For dues-over-threshold questions, clarify tenant-level vs property-level grouping before querying.
+- For tenant-linked dues joins, prefer `inv.property = concat(property.pg_id, 'PG', property.pg_number)` and `tenant.firebase_id = inv.payer` when using the backend-approved dues shape.
+- Never assume `invoices` has `is_deleted` or `is_paid`.
 - For non-technical verification, run one property first and compare against the manager app before running all properties.
+- For global dues-threshold answers, inspect the highest unpaid rows for anomalies before trusting the headline number.
 
 ### SalesHub and Portfolio
 
@@ -110,6 +122,7 @@ Live data also contains statuses `15` and `100`; do not invent their meaning wit
 - Common joins: `tenant.property_id = property.id`, `room.property_id = property.id`, `tenant.room = room.name AND tenant.property_id = room.property_id`.
 - Stronger bed-level relation: `tenant_room.tenant_id = tenant.id` and `tenant_room.room_id = room.id`.
 - Use these dashboards as query-shape hints, then run a fresh live query.
+- Do not assume the same occupancy join fits every property structure.
 - Treat Yello short-term/long-term and revenue formulas as client-specific until verified.
 
 ## Learning Loop
@@ -150,6 +163,7 @@ Confidence
 - For pilot testing or client comparison: read `references/gold-pack.md`.
 - For team rollout, prompt setup, or non-technical onboarding: read `references/rollout-pack.md`.
 - For client issues, workarounds, and collective learning: read `references/learning-loop.md`.
+- For live-failure patterns and stop-rules: read `/Users/eazypg/projects/rentok-metabase-analyst-skill/docs/RENTOK_METABASE_HARDENING_NOTES.md`.
 
 ## Canonical Workspace Docs
 

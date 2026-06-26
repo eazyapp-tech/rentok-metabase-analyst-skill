@@ -95,7 +95,7 @@ AND tenant.property_id = property.id
 AND room.property_id = property.id
 ```
 
-Use with care because room names are not as clean as ids. Prefer `tenant_room` when the exact bed-level relation matters.
+Use with care because room names are not as clean as ids. Prefer property-structure-aware logic when the exact bed-level relation matters: old structures may still rely on `tenant.room`, while newer ones can use `tenant_room` or history-backed logic.
 
 ### Bed-level tenant relation
 

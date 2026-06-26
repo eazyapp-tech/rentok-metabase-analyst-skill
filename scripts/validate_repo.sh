@@ -14,8 +14,10 @@ required_files=(
   "$ROOT/docs/RENTOK_METABASE_PILOT_SCORECARD.md"
   "$ROOT/docs/RENTOK_METABASE_VALIDATION_WORKFLOW.md"
   "$ROOT/docs/RENTOK_METABASE_LEARNING_LOOP.md"
+  "$ROOT/docs/RENTOK_METABASE_HARDENING_NOTES.md"
   "$ROOT/docs/RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md"
   "$ROOT/docs/learnings/LEARNING_NOTE_TEMPLATE.md"
+  "$ROOT/scripts/live_regression_pack.js"
   "$ROOT/skill/rentok-metabase-analyst/SKILL.md"
   "$ROOT/skill/rentok-metabase-analyst/agents/openai.yaml"
   "$ROOT/skill/rentok-metabase-analyst/references/grounding-map.md"
@@ -37,5 +39,7 @@ grep -q "name: rentok-metabase-analyst" "$ROOT/skill/rentok-metabase-analyst/SKI
 grep -q "90/110\\|99/110" "$ROOT/docs/RENTOK_METABASE_GOLD_PACK.md" || { echo "Gold pack missing pilot threshold"; exit 1; }
 grep -Eqi "one-property|one property|single-property|single property" "$ROOT/docs/RENTOK_METABASE_ROLLOUT_QUICKSTART.md" || { echo "Quickstart missing app cross-check guidance"; exit 1; }
 grep -q "learning note" "$ROOT/docs/RENTOK_METABASE_LEARNING_LOOP.md" || { echo "Learning loop missing learning note guidance"; exit 1; }
+grep -q "status = 0" "$ROOT/docs/RENTOK_METABASE_HARDENING_NOTES.md" || { echo "Hardening notes missing dues status guidance"; exit 1; }
+grep -q "verified_on" "$ROOT/scripts/live_regression_pack.js" || { echo "Live regression pack missing verified_on output"; exit 1; }
 
 echo "Repo validation passed."

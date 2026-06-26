@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 - 2026-06-26
+
+- Added a live regression pack at `scripts/live_regression_pack.js` for drift-prone baselines, unknown tenant statuses, dues-threshold anomaly checks, and a real property cross-check.
+- Added `RENTOK_METABASE_HARDENING_NOTES.md` with stop-rules for status drift, dues schema mistakes, outlier-heavy finance answers, and occupancy join ambiguity.
+- Tightened the core skill so it stamps live verification dates, treats statuses `15` and `100` as unverified, and lowers confidence when join paths conflict.
+- Replaced loose dues-threshold guidance with backend-approved invoice rules using `invoices.status = 0`, `invoices.is_active = 1`, and the approved property plus tenant join path.
+- Softened the blanket `tenant_room` guidance so occupancy logic stays property-structure-aware instead of pretending one join fits every case.
+
 ## 0.1.0 - 2026-06-26
 
 - Packaged the RentOk Metabase analyst skill as a standalone GitHub-ready repo.

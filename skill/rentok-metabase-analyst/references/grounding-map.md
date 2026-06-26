@@ -11,7 +11,7 @@ Use this for RentOk table meaning, joins, and formula cautions.
 | User | `users` | no verified explicit test flag |
 | Room | `room` | has room/bed hierarchy |
 | Tenant-room | `tenant_room` | bridge table, count distinct tenants after joins |
-| Invoice | `invoices` | dues are unpaid active invoices |
+| Invoice | `invoices` | dues are `status = 0` and `is_active = 1` |
 | Payment | `payments` | collections are payment-side unless using invoice-level filters |
 | SalesHub account | `tenant` inside RentOk plans account | account rows can point to real customer property through `tenant.firebase_id = property.id::text` |
 | Demo lead | `demo_leads` | sales/demo source, not the same as `tenant.status = 3` |
@@ -32,14 +32,20 @@ Use this for RentOk table meaning, joins, and formula cautions.
 - `8` deleted or rejected self invite
 
 Live data has unverified statuses `15` and `100`.
+- June 26, 2026 live sample: `status = 100` was entirely tied to `lead_source = 'genie'`.
+- June 26, 2026 live sample: `status = 15` was mostly unlabeled.
 
 ## Formula Cautions
 
 - Total dues: invoice-side, unpaid active invoice amounts.
+- Approved dues base: `invoices.status = 0` and `invoices.is_active = 1`.
+- Approved collections base: `invoices.status = 1` and `invoices.is_active = 1`, plus real-payment filters when collection logic requires them.
 - Current month dues: unpaid active invoices filtered by due date and due type.
 - Collections: state whether the answer is payment-side or invoice-side.
 - Deposits: separate deposit dues collected from deposit balance adjusted.
 - Occupancy: prefer bed occupancy and say whether it is app-contract grounded or raw-SQL proven.
+- Do not assume invoice columns like `is_deleted` or `is_paid`.
+- For dues joins, `inv.property = concat(property.pg_id, 'PG', property.pg_number)` and `tenant.firebase_id = inv.payer` are the approved anchors.
 
 ## Existing Metabase Assets
 
@@ -97,6 +103,8 @@ For full detail, read:
 - Search public/user dashboards for customer-facing portfolio, occupancy, movement, complaints, KYC/PV/LLA, and optimization questions.
 - Most are filtered by `property.eazypg_id`.
 - Room-name joins are common but weaker than id-based joins.
-- Prefer `tenant_room` when bed-level accuracy matters.
+- Old-structure properties often still rely on `tenant.room`.
+- Newer property structures can use `tenant_room` or `tenant_stay_history` style logic.
+- Prefer property-structure-aware occupancy logic over a universal join rule.
 - Some occupancy cards use `tenant.status = 1`; others use `tenant.status IN (1, 2)`.
 - Treat Yello short-term/long-term and revenue formulas as client-specific until verified.

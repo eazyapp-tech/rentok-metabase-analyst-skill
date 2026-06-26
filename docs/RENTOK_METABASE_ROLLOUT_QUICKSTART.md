@@ -141,6 +141,7 @@ Recommended workflow:
 6. If it matches, run the same query for all properties.
 7. If it does not match, capture a learning note and do not trust the global query yet.
 8. If the all-properties result shows absurd unpaid amounts, inspect the top rows and call out likely data outliers before presenting the final answer.
+9. Stamp the final answer with the live verification date because these numbers drift.
 
 What this proves:
 

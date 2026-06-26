@@ -60,6 +60,8 @@ Total dues is an aggregate of unpaid invoices.
 - invoice must be unpaid
 - invoice amount must be positive
 - invoice must be active
+- approved unpaid state is `invoices.status = 0`
+- approved active flag is `invoices.is_active = 1`
 - tenant-facing dues list groups these invoices by tenant
 
 Plain form:
@@ -112,15 +114,32 @@ These are different answers.
 Tenant-level:
 
 ```sql
-GROUP BY tenant.id
-HAVING SUM(unpaid active invoice amount) > 100000
+FROM invoices inv
+LEFT JOIN property p
+  ON inv.property = CONCAT(p.pg_id, 'PG', p.pg_number)
+LEFT JOIN tenant t
+  ON t.property_id = p.id
+ AND t.firebase_id = inv.payer
+WHERE inv.status = 0
+  AND inv.is_active = 1
+  AND t.status IN (1, 2)
+GROUP BY p.id, inv.payer
+HAVING SUM(inv.amount) > 100000
 ```
 
 Property-level:
 
 ```sql
-GROUP BY property.id
-HAVING SUM(unpaid active invoice amount) > 100000
+FROM invoices inv
+LEFT JOIN property p
+  ON inv.property = CONCAT(p.pg_id, 'PG', p.pg_number)
+LEFT JOIN tenant t
+  ON t.property_id = p.id
+ AND t.firebase_id = inv.payer
+WHERE inv.status = 0
+  AND inv.is_active = 1
+GROUP BY p.id
+HAVING SUM(CASE WHEN t.status IN (1, 2) THEN inv.amount ELSE 0 END) > 100000
 ```
 
 **Safe answer rule**
@@ -149,8 +168,16 @@ Before trusting a global dues-over-threshold answer:
 2. inspect the top rows for impossible values
 3. if absurd outliers appear, say that clearly
 4. validate one realistic property before presenting the broad answer
+5. when useful, also show a bounded practical count such as `> 1 lakh and <= 50 lakh`
 
 This matters because a correct query shape can still surface bad legacy or anomalous invoice values.
+
+**Hardening notes from live testing**
+
+- do not assume `invoices` has `is_deleted` or `is_paid`
+- do not assume `payer LIKE 'cust_%'`
+- tenant-level dues can still surface extreme outliers even with the approved join path
+- a bounded practical count can be more decision-useful than a raw anomaly-heavy count
 
 **Confidence**
 
