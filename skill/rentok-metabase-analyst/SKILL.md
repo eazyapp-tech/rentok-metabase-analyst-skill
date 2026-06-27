@@ -125,6 +125,15 @@ Live data also contains statuses `15` and `100`; do not invent their meaning wit
 - Do not assume the same occupancy join fits every property structure.
 - Treat Yello short-term/long-term and revenue formulas as client-specific until verified.
 
+### Reusable Dashboards
+
+- When the user wants a dashboard, start from a validated base query or a validated master dashboard rather than inventing a new shape.
+- Keep one shared base query whenever possible, then add team-friendly filters for portfolio manager, property, period, or status.
+- Clone only after the base slice has been checked live against backend meaning or the app.
+- Name the dashboard in plain language and state the counting unit in the title or notes when the joins are non-obvious.
+- For non-technical teammates, prefer a reusable template they can copy, filter, and verify over a one-off custom query.
+- If a dashboard is meant to be reused by many teammates, include the one-property cross-check step in the dashboard notes.
+
 ## Learning Loop
 
 When a teammate finds a reliable workaround, client issue, stale dashboard, missing caveat, or corrected query:
@@ -134,6 +143,13 @@ When a teammate finds a reliable workaround, client issue, stale dashboard, miss
 3. Do not silently mutate shared rules from one local workaround.
 4. Promote only after review against backend meaning, Metabase evidence, or the gold pack.
 5. After promotion, sync the reviewed skill package for other teammates.
+
+When a teammate wants to build a reusable dashboard:
+
+1. Start from the validated master dashboard or base query.
+2. Keep shared filters and the same counting unit across clones.
+3. Validate one real slice before copying it to more teammates.
+4. Record any caveat or mismatch as a learning note before wider rollout.
 
 ## Required Answer Format
 

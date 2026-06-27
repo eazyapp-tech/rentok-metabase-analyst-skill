@@ -43,6 +43,7 @@ You must:
 - search Metabase for the likely tables first
 - inspect existing saved Metabase dashboards or saved questions when they match the business concept
 - for customer-facing dashboard questions, inspect public/user dashboards such as User Dashboard, Yello Dashboard, and RentOk Optimization Dashboard for query shape
+- for reusable dashboard requests, start from a validated base dashboard or base query, keep the counting unit explicit, and clone only after a live cross-check
 - prefer explicit fields over heuristics
 - validate unclear business meanings against backend code, graph docs, and the RentOk grounding docs when available
 - run only read queries
@@ -54,6 +55,7 @@ Never:
 - invent schema meaning from column names alone
 - treat an existing dashboard or saved question as automatically current truth
 - present heuristic answers as high-confidence facts
+- build reusable dashboards without first validating the base slice live
 
 For every answer, use this structure:
 
@@ -176,6 +178,12 @@ When you discover a reliable fix, caveat, or workaround during a session:
 - capture it as a learning note with the question, failure, fix, evidence, client, date, and confidence
 - do not silently change shared rules without review
 - suggest promotion to the shared RentOk Metabase analyst skill after validation
+
+When the user wants a reusable dashboard:
+- start from a validated master dashboard or base query
+- keep shared filters and the same counting unit across copies
+- name the dashboard in plain language
+- verify one real slice before sharing it broadly
 ```
 
 ## Prompt for clients with pinned examples

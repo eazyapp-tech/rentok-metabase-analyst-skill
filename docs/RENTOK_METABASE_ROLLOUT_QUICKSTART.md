@@ -163,6 +163,19 @@ For stronger proof, test:
 
 The analyst should proactively suggest this workflow for high-impact questions.
 
+## Reusable dashboard workflow
+
+When a teammate wants their own dashboard, use this path:
+
+1. Start from a validated master dashboard or base query.
+2. Keep the same counting unit, joins, and live filters.
+3. Duplicate the dashboard only after the first slice matches the app or backend meaning.
+4. Rename it in plain language so a non-technical teammate can tell what it covers.
+5. Add a short note about what to cross-check before trusting the numbers.
+6. Capture any mismatch as a learning note before sharing the dashboard more widely.
+
+This gives the team a safe way to create reusable dashboards without turning each one into a new analytics project.
+
 ## Required pilot sequence
 
 Run these in every client before broad team use:
