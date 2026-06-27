@@ -6,7 +6,7 @@ June 27, 2026
 
 ## Current state
 
-The first live Metabase dashboard build is created.
+The first live Metabase dashboard build is created and the leadership layer is added.
 
 Dashboard:
 
@@ -60,6 +60,10 @@ These are attached to dashboard `217`.
 
 Current dashboard card count:
 
+- `22`
+
+Leadership card count:
+
 - `11`
 
 ## Important build rules discovered live
@@ -108,17 +112,32 @@ Lower section:
 - High Due Accounts
 - Account Drill Table
 
+Leadership layer:
+
+- PM Review Table
+- Current Due by PM
+- Overdue Accounts by PM
+- Expiring Plans by PM
+- Linked Coverage by PM
+- Top Due Accounts
+- 30 Plus Day Overdue Accounts
+- Plans Expiring in 30 Days
+- Unlinked High Value Accounts
+- Due Aging by PM
+- Collection Month Compare
+
 ## Best next steps
 
-1. use `RENTOK_SALESHUB_LEADERSHIP_DASHBOARD_PLAN.md` as the build gate before making live Metabase changes
-2. polish dashboard card titles and descriptions inside Metabase
-3. verify `Pankaj`, `Siddhant`, and `Ayush` in an interactive browser session or non-headless flow
-4. add helper note text in the dashboard about:
+1. review the leadership layer visually in Metabase
+2. decide whether leadership cards should move above the original validation cards
+3. polish dashboard card titles and descriptions inside Metabase
+4. verify `Pankaj`, `Siddhant`, and `Ayush` in an interactive browser session or non-headless flow
+5. add helper note text in the dashboard about:
    - unlinked rows
    - nullable active-tenant counts
    - validated PM slices
-5. build the leadership summary variant on top of the validated master dashboard
-6. only then consider PM-specific filtered clones
+6. cross-check one linked real property in the manager app
+7. only then consider PM-specific filtered clones
 
 ## Continuation note
 
@@ -126,6 +145,7 @@ If this work resumes in Claude Code or another client, start from:
 
 - this file
 - `RENTOK_SALESHUB_LEADERSHIP_DASHBOARD_PLAN.md`
+- `RENTOK_SALESHUB_LEADERSHIP_BUILD_RESULT.md`
 - `RENTOK_SALESHUB_PORTFOLIO_DASHBOARD_SPEC.md`
 - `RENTOK_SALESHUB_PORTFOLIO_BASE_QUERY.md`
 - `RENTOK_SALESHUB_PORTFOLIO_VALIDATION_SUMMARY.md`
