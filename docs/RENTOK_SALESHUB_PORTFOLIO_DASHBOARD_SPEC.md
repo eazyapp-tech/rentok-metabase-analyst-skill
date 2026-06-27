@@ -198,6 +198,28 @@ Purpose:
 - this is the main audit table
 - it should be the source for spot-checks and exports
 
+## 7. Leadership summary view
+
+Cards:
+
+- portfolio size by PM
+- unpaid amount by PM
+- due aging by PM
+- expiring plans by PM
+- top 10 risk accounts
+- top 10 collections overdue
+
+Purpose:
+
+- let a sales head scan who needs attention first
+- show which portfolio managers are healthy and which are slipping
+- make the dashboard useful for review meetings, not just audits
+
+Rule:
+
+- this view should stay plain and decision-facing
+- it should always include a drill table underneath so the user can inspect the counts
+
 ## Validation rules before rollout
 
 ## Rule 1. Validate one real PM group
@@ -261,6 +283,18 @@ Phase 3:
   - PM view
   - sales ops collection view
   - leadership summary view
+
+## What a sales head would still want
+
+The current build is a strong base, but a sales head would usually want more than the current snapshot:
+
+- a PM comparison view
+- due aging and overdue concentration
+- top risky accounts and action lists
+- trend over time, not just current totals
+- a clear way to move from total numbers to account-level detail
+
+So the best next dashboard step is not to add random cards. It is to add a leadership summary layer on top of the validated master dashboard.
 
 ## Open questions we should settle before cloning
 

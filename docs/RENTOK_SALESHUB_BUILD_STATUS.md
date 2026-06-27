@@ -112,13 +112,11 @@ Lower section:
 
 1. polish dashboard card titles and descriptions inside Metabase
 2. verify `Siddhant` and `Ayush` again in an interactive browser session or non-headless flow
-3. add optional helper note text in the dashboard about:
+3. add helper note text in the dashboard about:
    - unlinked rows
    - nullable active-tenant counts
    - validated PM slices
-4. decide whether to add:
-   - PM-specific filtered clones
-   - a leadership summary variant
+4. build the leadership summary variant on top of the validated master dashboard
 5. only then consider PM-specific filtered clones
 
 ## Continuation note

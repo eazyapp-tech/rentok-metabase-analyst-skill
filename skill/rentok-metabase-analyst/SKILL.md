@@ -134,6 +134,27 @@ Live data also contains statuses `15` and `100`; do not invent their meaning wit
 - For non-technical teammates, prefer a reusable template they can copy, filter, and verify over a one-off custom query.
 - If a dashboard is meant to be reused by many teammates, include the one-property cross-check step in the dashboard notes.
 
+### Dashboard Creation Playbook
+
+When building a new dashboard for teammates:
+
+1. Identify the audience first: sales head, sales ops, PM, business, or leadership.
+2. Decide the main unit before anything else: account row, property, tenant, payment, or lead.
+3. Start from the closest validated dashboard or base query.
+4. Add the minimum cards needed for action, not just totals.
+5. Include one detail table that explains the top numbers.
+6. Add a comparison view when a manager needs to scan many groups.
+7. Validate one live slice against backend meaning or the app.
+8. Publish only after the counts and labels are understandable to a non-technical teammate.
+
+For leadership or sales-head dashboards, prefer:
+
+- trend cards
+- ranking or comparison cards
+- overdue and risk cards
+- follow-up or next-action tables
+- a drill table that exposes the units behind the totals
+
 ## Learning Loop
 
 When a teammate finds a reliable workaround, client issue, stale dashboard, missing caveat, or corrected query:
