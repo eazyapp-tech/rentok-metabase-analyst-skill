@@ -296,6 +296,10 @@ The current build is a strong base, but a sales head would usually want more tha
 
 So the best next dashboard step is not to add random cards. It is to add a leadership summary layer on top of the validated master dashboard.
 
+The detailed build plan is:
+
+- `RENTOK_SALESHUB_LEADERSHIP_DASHBOARD_PLAN.md`
+
 ## Open questions we should settle before cloning
 
 - Does `2024 Users`, `2025 Users`, `2026 Users`, and `Users Older Than 2024` represent backlog buckets, migration buckets, or active operating ownership?

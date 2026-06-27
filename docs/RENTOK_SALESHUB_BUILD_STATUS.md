@@ -110,20 +110,22 @@ Lower section:
 
 ## Best next steps
 
-1. polish dashboard card titles and descriptions inside Metabase
-2. verify `Siddhant` and `Ayush` again in an interactive browser session or non-headless flow
-3. add helper note text in the dashboard about:
+1. use `RENTOK_SALESHUB_LEADERSHIP_DASHBOARD_PLAN.md` as the build gate before making live Metabase changes
+2. polish dashboard card titles and descriptions inside Metabase
+3. verify `Pankaj`, `Siddhant`, and `Ayush` in an interactive browser session or non-headless flow
+4. add helper note text in the dashboard about:
    - unlinked rows
    - nullable active-tenant counts
    - validated PM slices
-4. build the leadership summary variant on top of the validated master dashboard
-5. only then consider PM-specific filtered clones
+5. build the leadership summary variant on top of the validated master dashboard
+6. only then consider PM-specific filtered clones
 
 ## Continuation note
 
 If this work resumes in Claude Code or another client, start from:
 
 - this file
+- `RENTOK_SALESHUB_LEADERSHIP_DASHBOARD_PLAN.md`
 - `RENTOK_SALESHUB_PORTFOLIO_DASHBOARD_SPEC.md`
 - `RENTOK_SALESHUB_PORTFOLIO_BASE_QUERY.md`
 - `RENTOK_SALESHUB_PORTFOLIO_VALIDATION_SUMMARY.md`
