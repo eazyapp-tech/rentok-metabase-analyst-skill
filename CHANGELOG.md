@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 - 2026-06-27
+
+- Added `RENTOK_METABASE_QUESTION_INVENTORY.md` to classify the first high-value business, sales ops, product ops, product, and design questions by metric family and risk.
+- Added `RENTOK_METABASE_DASHBOARD_EVIDENCE_MAP.md` to map current Metabase dashboards to teams, metric families, trust labels, and reusable evidence.
+- Added `RENTOK_METABASE_METRIC_REGISTRY_V1.md` as the first structured registry skeleton for approved, guarded, and draft metrics.
+- Linked the new planning docs from `README.md`.
+- Updated repo validation so the inventory, dashboard evidence map, and metric registry become required project artifacts.
+
 ## 0.1.1 - 2026-06-26
 
 - Added a live regression pack at `scripts/live_regression_pack.js` for drift-prone baselines, unknown tenant statuses, dues-threshold anomaly checks, and a real property cross-check.

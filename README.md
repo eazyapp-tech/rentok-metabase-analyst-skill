@@ -45,6 +45,9 @@ Then use:
 - [Gold Pack](./docs/RENTOK_METABASE_GOLD_PACK.md)
 - [Pilot Scorecard](./docs/RENTOK_METABASE_PILOT_SCORECARD.md)
 - [Hardening Notes](./docs/RENTOK_METABASE_HARDENING_NOTES.md)
+- [Question Inventory](./docs/RENTOK_METABASE_QUESTION_INVENTORY.md)
+- [Dashboard Evidence Map](./docs/RENTOK_METABASE_DASHBOARD_EVIDENCE_MAP.md)
+- [Metric Registry v1](./docs/RENTOK_METABASE_METRIC_REGISTRY_V1.md)
 
 ## Recommended proof loop
 

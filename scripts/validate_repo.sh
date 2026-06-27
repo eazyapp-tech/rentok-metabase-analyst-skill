@@ -8,6 +8,7 @@ required_files=(
   "$ROOT/CHANGELOG.md"
   "$ROOT/VERSION"
   "$ROOT/CONTRIBUTING.md"
+  "$ROOT/docs/RENTOK_METABASE_DASHBOARD_EVIDENCE_MAP.md"
   "$ROOT/docs/RENTOK_METABASE_ROLLOUT_QUICKSTART.md"
   "$ROOT/docs/RENTOK_METABASE_PROMPT_PACK.md"
   "$ROOT/docs/RENTOK_METABASE_GOLD_PACK.md"
@@ -15,7 +16,9 @@ required_files=(
   "$ROOT/docs/RENTOK_METABASE_VALIDATION_WORKFLOW.md"
   "$ROOT/docs/RENTOK_METABASE_LEARNING_LOOP.md"
   "$ROOT/docs/RENTOK_METABASE_HARDENING_NOTES.md"
+  "$ROOT/docs/RENTOK_METABASE_METRIC_REGISTRY_V1.md"
   "$ROOT/docs/RENTOK_METABASE_PUBLIC_USER_DASHBOARDS.md"
+  "$ROOT/docs/RENTOK_METABASE_QUESTION_INVENTORY.md"
   "$ROOT/docs/learnings/LEARNING_NOTE_TEMPLATE.md"
   "$ROOT/scripts/live_regression_pack.js"
   "$ROOT/skill/rentok-metabase-analyst/SKILL.md"
@@ -41,5 +44,8 @@ grep -Eqi "one-property|one property|single-property|single property" "$ROOT/doc
 grep -q "learning note" "$ROOT/docs/RENTOK_METABASE_LEARNING_LOOP.md" || { echo "Learning loop missing learning note guidance"; exit 1; }
 grep -q "status = 0" "$ROOT/docs/RENTOK_METABASE_HARDENING_NOTES.md" || { echo "Hardening notes missing dues status guidance"; exit 1; }
 grep -q "verified_on" "$ROOT/scripts/live_regression_pack.js" || { echo "Live regression pack missing verified_on output"; exit 1; }
+grep -q "Priority build order" "$ROOT/docs/RENTOK_METABASE_QUESTION_INVENTORY.md" || { echo "Question inventory missing build order"; exit 1; }
+grep -q "Trust labels" "$ROOT/docs/RENTOK_METABASE_DASHBOARD_EVIDENCE_MAP.md" || { echo "Dashboard evidence map missing trust labels"; exit 1; }
+grep -q "Registry status labels" "$ROOT/docs/RENTOK_METABASE_METRIC_REGISTRY_V1.md" || { echo "Metric registry missing status labels"; exit 1; }
 
 echo "Repo validation passed."
