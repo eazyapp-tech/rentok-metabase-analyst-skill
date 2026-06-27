@@ -53,8 +53,14 @@ Saved question cards created in Metabase:
 - `SalesHub Portfolio - Plan Mix`
 - `SalesHub Portfolio - High Due Accounts`
 - `SalesHub Portfolio - Account Drill Table`
+- `SalesHub Portfolio - Billed Beds`
+- `SalesHub Portfolio - Active Tenants`
 
 These are attached to dashboard `217`.
+
+Current dashboard card count:
+
+- `11`
 
 ## Important build rules discovered live
 
@@ -71,7 +77,7 @@ Verified:
 
 - dashboard `217` exists
 - dashboard `217` renders in Metabase
-- all `9` cards are attached
+- all `11` cards are attached
 - unfiltered dashboard page shows live values
 
 Not fully verified yet:
@@ -83,15 +89,36 @@ Observed quirk:
 - headless browser auth sometimes falls back to login for filtered deep links
 - this looked like a session/auth quirk, not a missing dashboard problem
 
+## Current layout shape
+
+Top row tiles:
+
+- Account Rows
+- Linked Real Properties
+- Unlinked Rows
+- Billed Beds
+- Active Tenants
+- Current Due
+- Total Paid
+- Expiring in 30 Days
+
+Lower section:
+
+- Plan Mix
+- High Due Accounts
+- Account Drill Table
+
 ## Best next steps
 
 1. polish dashboard card titles and descriptions inside Metabase
-2. improve visual layout if needed
-3. verify `Siddhant` and `Ayush` again in an interactive browser session or non-headless flow
+2. verify `Siddhant` and `Ayush` again in an interactive browser session or non-headless flow
+3. add optional helper note text in the dashboard about:
+   - unlinked rows
+   - nullable active-tenant counts
+   - validated PM slices
 4. decide whether to add:
-   - billed beds tile
-   - active tenants tile
-   - note text about unlinked rows and nullable tenant counts
+   - PM-specific filtered clones
+   - a leadership summary variant
 5. only then consider PM-specific filtered clones
 
 ## Continuation note
